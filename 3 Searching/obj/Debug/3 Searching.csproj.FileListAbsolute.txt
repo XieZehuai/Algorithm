@@ -1,0 +1,7 @@
+E:\Code\C#\Algorithm\3 Searching\obj\Debug\3 Searching.csprojAssemblyReference.cache
+E:\Code\C#\Algorithm\3 Searching\obj\Debug\3 Searching.csproj.CoreCompileInputs.cache
+E:\Code\C#\Algorithm\3 Searching\bin\Debug\3 Searching.exe.config
+E:\Code\C#\Algorithm\3 Searching\bin\Debug\3 Searching.exe
+E:\Code\C#\Algorithm\3 Searching\bin\Debug\3 Searching.pdb
+E:\Code\C#\Algorithm\3 Searching\obj\Debug\3 Searching.exe
+E:\Code\C#\Algorithm\3 Searching\obj\Debug\3 Searching.pdb

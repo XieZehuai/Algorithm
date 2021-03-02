@@ -1,0 +1,10 @@
+E:\Code\C#\Algorithm\Graph\obj\Debug\4 Graph.csprojAssemblyReference.cache
+E:\Code\C#\Algorithm\Graph\obj\Debug\4 Graph.csproj.CoreCompileInputs.cache
+E:\Code\C#\Algorithm\Graph\bin\Debug\1 Basics.exe
+E:\Code\C#\Algorithm\Graph\bin\Debug\1 Basics.pdb
+E:\Code\C#\Algorithm\Graph\bin\Debug\1 Basics.exe.config
+E:\Code\C#\Algorithm\Graph\obj\Debug\4 Graph.csproj.CopyComplete
+E:\Code\C#\Algorithm\Graph\bin\Debug\4 Graph.exe
+E:\Code\C#\Algorithm\Graph\bin\Debug\4 Graph.pdb
+E:\Code\C#\Algorithm\Graph\obj\Debug\4 Graph.exe
+E:\Code\C#\Algorithm\Graph\obj\Debug\4 Graph.pdb

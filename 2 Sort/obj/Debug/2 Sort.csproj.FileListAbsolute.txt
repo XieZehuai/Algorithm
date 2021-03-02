@@ -1,0 +1,7 @@
+E:\Code\C#\Algorithm\2 Sort\bin\Debug\2 Sort.exe.config
+E:\Code\C#\Algorithm\2 Sort\bin\Debug\2 Sort.exe
+E:\Code\C#\Algorithm\2 Sort\bin\Debug\2 Sort.pdb
+E:\Code\C#\Algorithm\2 Sort\obj\Debug\2 Sort.csprojAssemblyReference.cache
+E:\Code\C#\Algorithm\2 Sort\obj\Debug\2 Sort.csproj.CoreCompileInputs.cache
+E:\Code\C#\Algorithm\2 Sort\obj\Debug\2 Sort.exe
+E:\Code\C#\Algorithm\2 Sort\obj\Debug\2 Sort.pdb

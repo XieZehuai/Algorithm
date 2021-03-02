@@ -1,0 +1,6 @@
+E:\Code\C#\Algorithm\Graph\bin\Debug\Graph.exe
+E:\Code\C#\Algorithm\Graph\bin\Debug\Graph.pdb
+E:\Code\C#\Algorithm\Graph\obj\Debug\Graph.csprojAssemblyReference.cache
+E:\Code\C#\Algorithm\Graph\obj\Debug\Graph.csproj.CoreCompileInputs.cache
+E:\Code\C#\Algorithm\Graph\obj\Debug\Graph.exe
+E:\Code\C#\Algorithm\Graph\obj\Debug\Graph.pdb

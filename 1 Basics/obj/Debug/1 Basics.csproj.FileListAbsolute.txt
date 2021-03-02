@@ -1,0 +1,7 @@
+E:\Code\C#\Algorithm\1 Basics\bin\Debug\1 Basics.exe.config
+E:\Code\C#\Algorithm\1 Basics\bin\Debug\1 Basics.exe
+E:\Code\C#\Algorithm\1 Basics\bin\Debug\1 Basics.pdb
+E:\Code\C#\Algorithm\1 Basics\obj\Debug\1 Basics.csprojAssemblyReference.cache
+E:\Code\C#\Algorithm\1 Basics\obj\Debug\1 Basics.csproj.CoreCompileInputs.cache
+E:\Code\C#\Algorithm\1 Basics\obj\Debug\1 Basics.exe
+E:\Code\C#\Algorithm\1 Basics\obj\Debug\1 Basics.pdb
