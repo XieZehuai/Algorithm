@@ -51,6 +51,7 @@
     <Compile Include="GraphSearchAlgorithm\IGraphConnectedComponent.cs" />
     <Compile Include="GraphSearchAlgorithm\IGraphPathSearch.cs" />
     <Compile Include="GraphSearchAlgorithm\IGraphSearch.cs" />
+    <Compile Include="GraphSearchAlgorithm\Topological.cs" />
     <Compile Include="GraphSearchAlgorithm\UnionFindSearch.cs" />
     <Compile Include="GraphTest.cs" />
     <Compile Include="Program.cs" />

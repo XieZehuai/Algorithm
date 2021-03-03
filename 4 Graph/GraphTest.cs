@@ -7,7 +7,7 @@ namespace _4_Graph
     public class GraphTest
     {
         private static readonly int vertexCount = 13;
-        private static readonly int[,] edges = new int[14, 2]
+        private static readonly int[,] edges = new int[13, 2]
         {
             { 0, 5 },
             { 4, 3 },
@@ -22,7 +22,6 @@ namespace _4_Graph
             { 7, 8 },
             { 9, 11 },
             { 5, 3 },
-            { 3, 0 },
         };
 
         public static void Test()
@@ -30,29 +29,15 @@ namespace _4_Graph
             int target = int.Parse(Console.ReadLine()); // 输入目标顶点
             IGraph graph = CreateDirectedGraph(); // 生成图数据
 
-            DirectedDepthFirstOrder search = new DirectedDepthFirstOrder(CreateDirectedGraph());
+            Topological search = new Topological(CreateDirectedGraph());
 
-            Console.WriteLine("前序排列");
-            foreach (var i in search.PreOrder())
+            if (search.IsDAG())
             {
-                Console.Write(i + " ");
+                foreach  (var item in search.Order())
+                {
+                    Console.Write(item + " ");
+                }
             }
-            Console.WriteLine();
-
-            Console.WriteLine("后序排列");
-            foreach (var i in search.PostOrder())
-            {
-                Console.Write(i + " ");
-            }
-            Console.WriteLine();
-
-
-            Console.WriteLine("逆后序排列");
-            foreach (var i in search.ReversePostOrder())
-            {
-                Console.Write(i + " ");
-            }
-            Console.WriteLine();
 
             //GraphSearchTest(new UnionFindSearch(graph, target));
             //GraphSearchTest(new DepthFirstSearch(graph, target));
