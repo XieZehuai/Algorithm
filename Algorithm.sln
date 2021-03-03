@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2 Sort", "2 Sort\2 Sort.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3 Searching", "3 Searching\3 Searching.csproj", "{D3D12556-6E44-4153-BFA9-839A92137A84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4 Graph", "Graph\4 Graph.csproj", "{4F596965-DD69-4C13-B33E-93F537C2A955}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4 Graph", "4 Graph\4 Graph.csproj", "{4F596965-DD69-4C13-B33E-93F537C2A955}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
