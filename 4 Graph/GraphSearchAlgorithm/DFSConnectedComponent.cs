@@ -1,6 +1,4 @@
-﻿using _4_Graph.Common;
-
-namespace _4_Graph.GraphSearchAlgorithm
+﻿namespace _4_Graph.GraphSearchAlgorithm
 {
     /// <summary>
     /// 基于深度优先搜索的图连通分量计算算法（连通分量就是独立子图的意思）

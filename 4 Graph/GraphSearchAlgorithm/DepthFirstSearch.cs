@@ -1,16 +1,18 @@
-﻿using _4_Graph.Common;
-
-namespace _4_Graph.GraphSearchAlgorithm
+﻿namespace _4_Graph.GraphSearchAlgorithm
 {
     /// <summary>
     /// 基于深度优先搜索的图搜索算法
     /// </summary>
     public class DepthFirstSearch : IGraphSearch
     {
-        private bool[] isConnected;
-        private int count;
+        protected bool[] isConnected;
+        protected int count;
 
-        public string Name => "深度优先搜索图搜索算法";
+        public virtual string Name => "深度优先搜索";
+
+        public DepthFirstSearch()
+        {
+        }
 
         public DepthFirstSearch(IGraph graph, int vertex)
         {
@@ -18,17 +20,17 @@ namespace _4_Graph.GraphSearchAlgorithm
             DFS(graph, vertex);
         }
 
-        public bool IsConnectedTo(int target)
+        public virtual bool IsConnectedTo(int target)
         {
             return isConnected[target];
         }
 
-        public int Count()
+        public virtual int Count()
         {
             return count;
         }
 
-        private void DFS(IGraph graph, int vertex)
+        protected virtual void DFS(IGraph graph, int vertex)
         {
             isConnected[vertex] = true;
             count++;

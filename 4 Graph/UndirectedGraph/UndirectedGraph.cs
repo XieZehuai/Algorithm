@@ -7,14 +7,13 @@ namespace _4_Graph
     /// <summary>
     /// 无向图
     /// </summary>
-    public class UndirectedGraph : Common.IGraph
+    public class UndirectedGraph : IGraph
     {
         #region 用于在图中表示边的数据结构
-
         /// <summary>
         /// 用于在图中表示边的数据结构
         /// </summary>
-        private class Edge : IEnumerable<int>, IEnumerator<int>
+        protected class Edge : IEnumerable<int>, IEnumerator<int>
         {
             public readonly int vertex;
             public Edge next;
@@ -57,12 +56,11 @@ namespace _4_Graph
             {
             }
         }
-
         #endregion
 
-        private readonly int vertexCount;
-        private int edgeCount;
-        private readonly Edge[] edges;
+        protected readonly int vertexCount;
+        protected int edgeCount;
+        protected readonly Edge[] edges;
 
         public UndirectedGraph(int vertexCount)
         {
@@ -82,11 +80,11 @@ namespace _4_Graph
             }
         }
 
-        public int VertexCount => vertexCount;
+        public virtual int VertexCount => vertexCount;
 
-        public int EdgeCount => edgeCount;
+        public virtual int EdgeCount => edgeCount;
 
-        public void AddEdge(int from, int to)
+        public virtual void AddEdge(int from, int to)
         {
             Edge edge = new Edge(to) { next = edges[from] };
             edges[from] = edge;
@@ -97,7 +95,7 @@ namespace _4_Graph
             edgeCount++;
         }
 
-        public IEnumerable<int> Adjacent(int vertex)
+        public virtual IEnumerable<int> Adjacent(int vertex)
         {
             return edges[vertex];
         }

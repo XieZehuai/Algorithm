@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace _4_Graph.Common
+namespace _4_Graph
 {
     /// <summary>
-    /// 图的抽象接口
+    /// 无向图接口
     /// </summary>
     public interface IGraph
     {

@@ -1,33 +1,74 @@
 ﻿using System;
 using System.Collections.Generic;
-using _4_Graph.Common;
 using _4_Graph.GraphSearchAlgorithm;
 
 namespace _4_Graph
 {
     public class GraphTest
     {
+        private static readonly int vertexCount = 13;
+        private static readonly int[,] edges = new int[14, 2]
+        {
+            { 0, 5 },
+            { 4, 3 },
+            { 0, 1 },
+            { 9, 12 },
+            { 6, 4 },
+            { 5, 4 },
+            { 0, 2 },
+            { 11, 12 },
+            { 9, 10 },
+            { 0, 6 },
+            { 7, 8 },
+            { 9, 11 },
+            { 5, 3 },
+            { 3, 0 },
+        };
+
         public static void Test()
         {
             int target = int.Parse(Console.ReadLine()); // 输入目标顶点
-            IGraph graph = CreateGraph(); // 生成图数据
-            int vertexCount = graph.VertexCount;
+            IGraph graph = CreateDirectedGraph(); // 生成图数据
 
-            //GraphSearchTest(new UnionFindSearch(graph, target), vertexCount);
-            //GraphSearchTest(new DepthFirstSearch(graph, target), vertexCount);
+            DirectedDepthFirstOrder search = new DirectedDepthFirstOrder(CreateDirectedGraph());
 
-            //GraphPathSearchTest(new DFSPathSearch(graph, target), target, vertexCount);
-            //GraphPathSearchTest(new BFSPathSearch(graph, target), target, vertexCount);
+            Console.WriteLine("前序排列");
+            foreach (var i in search.PreOrder())
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
 
-            GraphConnectedComponentTest(new DFSConnectedComponent(graph), vertexCount);
+            Console.WriteLine("后序排列");
+            foreach (var i in search.PostOrder())
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+
+
+            Console.WriteLine("逆后序排列");
+            foreach (var i in search.ReversePostOrder())
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+
+            //GraphSearchTest(new UnionFindSearch(graph, target));
+            //GraphSearchTest(new DepthFirstSearch(graph, target));
+
+            //GraphPathSearchTest(new DFSPathSearch(graph, target), target);
+            //GraphPathSearchTest(new BFSPathSearch(graph, target), target);
+
+            //GraphConnectedComponentTest(new DFSConnectedComponent(graph));
         }
 
         #region 图搜索算法测试
-        private static void GraphSearchTest(IGraphSearch search, int vertexCount)
+        private static void GraphSearchTest(IGraphSearch search)
         {
             Console.WriteLine(search.Name);
 
-            // 打印所有与目标顶点相邻的顶点
+            // 打印所有与目标顶点连通的顶点
             for (int i = 0; i < vertexCount; i++)
             {
                 if (search.IsConnectedTo(i))
@@ -42,7 +83,7 @@ namespace _4_Graph
         #endregion
 
         #region 图路径搜索算法测试
-        private static void GraphPathSearchTest(IGraphPathSearch search, int start, int vertexCount)
+        private static void GraphPathSearchTest(IGraphPathSearch search, int start)
         {
             Console.WriteLine(search.Name);
 
@@ -56,7 +97,7 @@ namespace _4_Graph
                     foreach (var v in search.PathTo(i))
                     {
                         if (start == v) Console.Write(v);
-                        else Console.Write("->" + v);
+                        else Console.Write(" -> " + v);
                     }
                 }
                 else
@@ -70,7 +111,7 @@ namespace _4_Graph
         #endregion
 
         #region 图连通分量测试
-        private static void GraphConnectedComponentTest(IGraphConnectedComponent search, int vertexCount)
+        private static void GraphConnectedComponentTest(IGraphConnectedComponent search)
         {
             Console.WriteLine(search.Name);
 
@@ -102,24 +143,12 @@ namespace _4_Graph
         #region 生成图数据
         private static IGraph CreateGraph()
         {
-            int[,] edges = new int[13, 2]
-            {
-                { 0, 5 },
-                { 4, 3 },
-                { 0, 1 },
-                { 9, 12 },
-                { 6, 4 },
-                { 5, 4 },
-                { 0, 2 },
-                { 11, 12 },
-                { 9, 10 },
-                { 0, 6 },
-                { 7, 8 },
-                { 9, 11 },
-                { 5, 3 },
-            };
+            return new UndirectedGraph(vertexCount, edges);
+        }
 
-            return new UndirectedGraph(13, edges);
+        private static IDirectedGraph CreateDirectedGraph()
+        {
+            return new DirectedGraph(vertexCount, edges);
         }
         #endregion
     }

@@ -38,12 +38,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\IDirectedGraph.cs" />
+    <Compile Include="DirectedGraph\DirectedGraph.cs" />
     <Compile Include="GraphSearchAlgorithm\BFSPathSearch.cs" />
     <Compile Include="GraphSearchAlgorithm\DFSConnectedComponent.cs" />
     <Compile Include="GraphSearchAlgorithm\DepthFirstSearch.cs" />
     <Compile Include="Common\GraphUtil.cs" />
     <Compile Include="Common\IGraph.cs" />
     <Compile Include="GraphSearchAlgorithm\DFSPathSearch.cs" />
+    <Compile Include="GraphSearchAlgorithm\DirectedCycle.cs" />
+    <Compile Include="GraphSearchAlgorithm\DirectedDepthFirstOrder.cs" />
     <Compile Include="GraphSearchAlgorithm\IGraphConnectedComponent.cs" />
     <Compile Include="GraphSearchAlgorithm\IGraphPathSearch.cs" />
     <Compile Include="GraphSearchAlgorithm\IGraphSearch.cs" />
@@ -58,6 +62,10 @@
     <ProjectReference Include="..\1 Basics\1 Basics.csproj">
       <Project>{438725b0-d13e-42ad-b51b-f90f30217320}</Project>
       <Name>1 Basics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3 Searching\3 Searching.csproj">
+      <Project>{d3d12556-6e44-4153-bfa9-839a92137a84}</Project>
+      <Name>3 Searching</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
