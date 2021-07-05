@@ -6,18 +6,18 @@ namespace _1_Basics
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
-            UnionFind uf = new UnionFind(n);
-            while (n-- > 0)
-            {
-                string[] inputs = Console.ReadLine().Split(' ');
-                int p = int.Parse(inputs[0]);
-                int q = int.Parse(inputs[1]);
+            Bag<int> bag = new Bag<int>();
 
-                if (!uf.IsConnected(p, q))
-                {
-                    uf.Union(p, q);
-                }
+            int n;
+            while ((n = int.Parse(Console.ReadLine())) != 0)
+            {
+                bag.Add(n);
+            }
+
+            Console.WriteLine(bag.Count);
+            foreach (var item in bag)
+            {
+                Console.Write(item + " ");
             }
         }
     }

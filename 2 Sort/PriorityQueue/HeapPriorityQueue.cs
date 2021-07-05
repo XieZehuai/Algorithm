@@ -1,15 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _2_Sort.PriorityQueue
 {
-    /*
-     * 用堆实现的优先队列，插入和删除的时间都为 O(lgN)
-     */
+    /// <summary>
+    /// 用堆实现的优先队列，插入和删除的时间都为O(lgN)
+    /// </summary>
     public class HeapPriorityQueue<T> : OrderedPriorityQueue<T> where T : IComparable<T>
     {
         public HeapPriorityQueue(int capacity) : base(capacity + 1)
         {
             this.capacity = capacity;
+        }
+
+        public HeapPriorityQueue(IEnumerable<T> items) : base(9)
+        {
+            capacity = 8;
+
+            foreach (var item in items)
+            {
+                Insert(item);
+            }
         }
 
         public override void Insert(T value)

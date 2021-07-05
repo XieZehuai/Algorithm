@@ -2,9 +2,9 @@
 
 namespace _2_Sort.PriorityQueue
 {
-    /*
-     * 有序的优先队列，删除操作O(1)时间，插入操作O(n)时间
-     */
+    /// <summary>
+    /// 有序的优先队列，删除操作O(1)时间，插入操作O(n)时间
+    /// </summary>
     public class OrderedPriorityQueue<T> : PriorityQueue<T> where T : IComparable<T>
     {
         protected T[] datas; // 保存所有数据

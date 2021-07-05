@@ -21,3 +21,6 @@ E:\Code\C#\Algorithm\4 Graph\bin\Debug\1 Basics.exe.config
 E:\Code\C#\Algorithm\4 Graph\bin\Debug\3 Searching.pdb
 E:\Code\C#\Algorithm\4 Graph\bin\Debug\3 Searching.exe.config
 E:\Code\C#\Algorithm\4 Graph\obj\Debug\4 Graph.csproj.CopyComplete
+E:\Code\C#\Algorithm\4 Graph\bin\Debug\2 Sort.exe
+E:\Code\C#\Algorithm\4 Graph\bin\Debug\2 Sort.pdb
+E:\Code\C#\Algorithm\4 Graph\bin\Debug\2 Sort.exe.config
