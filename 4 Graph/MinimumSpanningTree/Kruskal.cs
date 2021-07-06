@@ -10,17 +10,17 @@ namespace _4_Graph.MinimumSpanningTree
 {
     public class Kruskal : MST
     {
-        private Queue<Edge> mst;
+        private Queue<UndirectedEdge> mst;
 
         public Kruskal(EdgeWeightedGraph graph) : base(graph)
         {
-            mst = new Queue<Edge>();
-            PriorityQueue<Edge> priorityQueue = new HeapPriorityQueue<Edge>(graph.Edges());
+            mst = new Queue<UndirectedEdge>();
+            PriorityQueue<UndirectedEdge> priorityQueue = new HeapPriorityQueue<UndirectedEdge>(graph.Edges());
             UnionFind unionFind = new UnionFind(graph.VertexCount);
 
             while (!priorityQueue.IsEmpty && mst.Count < graph.VertexCount - 1)
             {
-                Edge edge = priorityQueue.DeleteMax();
+                UndirectedEdge edge = priorityQueue.DeleteMax();
                 if (unionFind.IsConnected(edge.V, edge.W))
                 {
                     continue;
@@ -33,7 +33,7 @@ namespace _4_Graph.MinimumSpanningTree
 
         public override float Weight => throw new NotImplementedException();
 
-        public override IEnumerable<Edge> Edges()
+        public override IEnumerable<UndirectedEdge> Edges()
         {
             throw new NotImplementedException();
         }

@@ -30,6 +30,6 @@ namespace _4_Graph.MinimumSpanningTree
         /// <summary>
         /// 最小生成树的所有边
         /// </summary>
-        public abstract IEnumerable<Edge> Edges();
+        public abstract IEnumerable<UndirectedEdge> Edges();
     }
 }

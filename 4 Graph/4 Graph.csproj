@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\IDirectedGraph.cs" />
+    <Compile Include="Common\WeightedEdge.cs" />
     <Compile Include="DirectedGraph\DirectedGraph.cs" />
     <Compile Include="GraphSearchAlgorithm\BFSPathSearch.cs" />
     <Compile Include="GraphSearchAlgorithm\DFSConnectedComponent.cs" />
@@ -71,7 +72,7 @@
     <Compile Include="GraphSearchAlgorithm\TransitiveClosure.cs" />
     <Compile Include="GraphSearchAlgorithm\UnionFindSearch.cs" />
     <Compile Include="GraphTest.cs" />
-    <Compile Include="MinimumSpanningTree\Edge.cs" />
+    <Compile Include="MinimumSpanningTree\UndirectedEdge.cs" />
     <Compile Include="MinimumSpanningTree\EdgeWeightedGraph.cs" />
     <Compile Include="MinimumSpanningTree\Kruskal.cs" />
     <Compile Include="MinimumSpanningTree\MST.cs" />
@@ -79,6 +80,10 @@
     <Compile Include="MinimumSpanningTree\Test.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShortestPath\DirectedEdge.cs" />
+    <Compile Include="ShortestPath\EdgeWeightedDigraph.cs" />
+    <Compile Include="ShortestPath\SP.cs" />
+    <Compile Include="ShortestPath\Test.cs" />
     <Compile Include="UndirectedGraph\SymbolGraph.cs" />
     <Compile Include="UndirectedGraph\UndirectedGraph.cs" />
   </ItemGroup>

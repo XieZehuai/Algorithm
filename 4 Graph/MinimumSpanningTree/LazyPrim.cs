@@ -7,20 +7,20 @@ namespace _4_Graph.MinimumSpanningTree
     public class LazyPrim : MST
     {
         private bool[] marked;
-        private Queue<Edge> mst;
-        private PriorityQueue<Edge> priorityQueue;
+        private Queue<UndirectedEdge> mst;
+        private PriorityQueue<UndirectedEdge> priorityQueue;
         private float weight;
 
         public LazyPrim(EdgeWeightedGraph graph) : base(graph)
         {
             marked = new bool[graph.VertexCount];
-            mst = new Queue<Edge>();
-            priorityQueue = new HeapPriorityQueue<Edge>(graph.EdgeCount);
+            mst = new Queue<UndirectedEdge>();
+            priorityQueue = new HeapPriorityQueue<UndirectedEdge>(graph.EdgeCount);
 
             Visit(0);
             while (!priorityQueue.IsEmpty)
             {
-                Edge edge = priorityQueue.DeleteMax();
+                UndirectedEdge edge = priorityQueue.DeleteMax();
                 if (marked[edge.V] && marked[edge.W])
                 {
                     continue;
@@ -51,7 +51,7 @@ namespace _4_Graph.MinimumSpanningTree
 
         public override float Weight => weight;
 
-        public override IEnumerable<Edge> Edges()
+        public override IEnumerable<UndirectedEdge> Edges()
         {
             return mst;
         }

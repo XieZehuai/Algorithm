@@ -10,21 +10,21 @@ namespace _4_Graph.MinimumSpanningTree
     {
         private readonly int vertexCount;
         private int edgeCount;
-        private Bag<Edge>[] adjacents;
+        private Bag<UndirectedEdge>[] adjacents;
 
         /// <summary>
         /// 创建一个含有v个顶点的空图
         /// </summary>
-        /// <param name="v">顶点的数量</param>
+        /// <param name="vertexCount">顶点的数量</param>
         public EdgeWeightedGraph(int vertexCount)
         {
             this.vertexCount = vertexCount;
             edgeCount = 0;
-            adjacents = new Bag<Edge>[vertexCount];
+            adjacents = new Bag<UndirectedEdge>[vertexCount];
 
             for (int v = 0; v < vertexCount; v++)
             {
-                adjacents[v] = new Bag<Edge>();
+                adjacents[v] = new Bag<UndirectedEdge>();
             }
         }
 
@@ -32,21 +32,21 @@ namespace _4_Graph.MinimumSpanningTree
 
         public int EdgeCount => edgeCount;
 
-        public void AddEdge(Edge edge)
+        public void AddEdge(UndirectedEdge edge)
         {
             adjacents[edge.V].Add(edge);
             adjacents[edge.W].Add(edge);
             edgeCount++;
         }
 
-        public IEnumerable<Edge> Adjacents(int vertex)
+        public IEnumerable<UndirectedEdge> Adjacents(int vertex)
         {
             return adjacents[vertex];
         }
 
-        public IEnumerable<Edge> Edges()
+        public IEnumerable<UndirectedEdge> Edges()
         {
-            Bag<Edge> bag = new Bag<Edge>();
+            Bag<UndirectedEdge> bag = new Bag<UndirectedEdge>();
 
             for (int v = 0; v < vertexCount; v++)
             {
