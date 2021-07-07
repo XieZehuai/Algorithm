@@ -4,7 +4,7 @@
     {
         public static void Main(string[] args)
         {
-            MinimumSpanningTree.Test.Invoke();
+            ShortestPath.Test.Invoke();
         }
     }
 }

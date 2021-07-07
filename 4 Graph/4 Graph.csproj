@@ -80,6 +80,7 @@
     <Compile Include="MinimumSpanningTree\Test.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShortestPath\Dijkstra.cs" />
     <Compile Include="ShortestPath\DirectedEdge.cs" />
     <Compile Include="ShortestPath\EdgeWeightedDigraph.cs" />
     <Compile Include="ShortestPath\SP.cs" />
