@@ -9,7 +9,7 @@ namespace _4_Graph.ShortestPath
         {
             var digraph = CreateGraph();
             int start = int.Parse(Console.ReadLine());
-            SP sp;
+            SP sp = new Dijkstra(digraph, start);
 
             for (int v = 0; v < digraph.VertexCount; v++)
             {

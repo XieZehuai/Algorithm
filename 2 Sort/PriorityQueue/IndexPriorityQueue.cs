@@ -22,7 +22,7 @@ namespace _2_Sort.PriorityQueue
 
             for (int i = 0; i <= capacity; i++)
             {
-                heap[i] = -1;
+                inverseHeap[i] = -1;
             }
         }
 
@@ -54,6 +54,8 @@ namespace _2_Sort.PriorityQueue
         public void Insert(int index, T item)
         {
             ValidateIndex(index);
+            if (Contains(index)) throw new ArgumentException($"已经存在索引为{index}的元素");
+
             count++;
             inverseHeap[index] = count;
             heap[count] = index;
@@ -170,7 +172,7 @@ namespace _2_Sort.PriorityQueue
         /// </summary>
         private void Swim(int index)
         {
-            while (index > 1 && Greater(index / 2, index))
+            while (index > 1 && Smaller(index / 2, index))
             {
                 Swap(index, index / 2);
                 index /= 2;
@@ -185,8 +187,8 @@ namespace _2_Sort.PriorityQueue
             while (2 * index <= count)
             {
                 int j = 2 * index;
-                if (j < count && Greater(j, j + 1)) j++;
-                if (!Greater(index, j)) break;
+                if (j < count && Smaller(j, j + 1)) j++;
+                if (!Smaller(index, j)) break;
                 Swap(index, j);
                 index = j;
             }
@@ -207,9 +209,9 @@ namespace _2_Sort.PriorityQueue
         /// <summary>
         /// 判断索引为a的元素是否大于索引为b的元素
         /// </summary>
-        private bool Greater(int a, int b)
+        private bool Smaller(int a, int b)
         {
-            return keys[heap[a]].CompareTo(keys[heap[b]]) > 0;
+            return keys[heap[a]].CompareTo(keys[heap[b]]) < 0;
         }
 
 

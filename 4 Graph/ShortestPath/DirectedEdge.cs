@@ -11,7 +11,7 @@
 
         public override string ToString()
         {
-            return $"{V} -> {W}  {Weight}";
+            return $"\t{V}->{W} ({Weight})";
         }
     }
 }

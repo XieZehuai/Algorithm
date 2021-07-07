@@ -17,10 +17,12 @@ namespace _4_Graph.ShortestPath
             edgeTo = new DirectedEdge[digraph.VertexCount];
             distanceTo = new float[digraph.VertexCount];
 
-            FindPath(digraph, start);
+            for (int v = 0; v < digraph.VertexCount; v++)
+            {
+                distanceTo[v] = float.MaxValue;
+            }
+            distanceTo[start] = 0f;
         }
-
-        protected abstract void FindPath(EdgeWeightedDigraph digraph, int start);
 
         /// <summary>
         /// 获取从起点到目标点的距离，如果不存在路径则距离为无穷大
@@ -57,7 +59,7 @@ namespace _4_Graph.ShortestPath
             return path;
         }
 
-        protected void Relax(DirectedEdge edge)
+        protected virtual void Relax(DirectedEdge edge)
         {
             int v = edge.V;
             int w = edge.W;
@@ -68,7 +70,7 @@ namespace _4_Graph.ShortestPath
             }
         }
 
-        protected void Relax(EdgeWeightedDigraph digraph, int vertex)
+        protected virtual void Relax(EdgeWeightedDigraph digraph, int vertex)
         {
             foreach (var edge in digraph.Adjacent(vertex))
             {
