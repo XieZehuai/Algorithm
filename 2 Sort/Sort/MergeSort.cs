@@ -2,24 +2,27 @@
 
 namespace _2_Sort
 {
-    class MergeSort : ISorter
+    /// <summary>
+    /// 归并排序
+    /// </summary>
+    public class MergeSort<T> : IComparisonSorter<T> where T : IComparable<T>
     {
         public string Name => top ? "归并排序：自顶向下" : "归并排序：自底向上";
 
-        private bool top;
-        private InsertSort insertSort = new InsertSort();
+        private readonly bool top;
+        private readonly InsertSort<T> insertSort = new InsertSort<T>();
 
         public MergeSort(bool top)
         {
             this.top = top;
         }
 
-        public void Sort<T>(T[] arr) where T : IComparable<T>
+        public void Sort(T[] arr)
         {
             Sort(arr, 0, arr.Length - 1);
         }
 
-        public void Sort<T>(T[] arr, int low, int high) where T : IComparable<T>
+        public void Sort(T[] arr, int low, int high)
         {
             if (top)
             {
@@ -32,7 +35,7 @@ namespace _2_Sort
         }
 
         // 自顶向下的归并排序方法
-        private void SortBT<T>(T[] arr, T[] temp, int low, int high) where T : IComparable<T>
+        private void SortBT(T[] arr, T[] temp, int low, int high)
         {
             if (high <= low + 10)
             {
@@ -49,7 +52,7 @@ namespace _2_Sort
         }
 
         // 自底向上的归并排序方法
-        private void SortBU<T>(T[] arr, T[] temp) where T : IComparable<T>
+        private void SortBU(T[] arr, T[] temp)
         {
             int len = arr.Length;
             for (int size = 1; size < len; size *= 2)
@@ -64,7 +67,7 @@ namespace _2_Sort
             }
         }
 
-        private void Merge<T>(T[] arr, T[] temp, int low, int mid, int high) where T : IComparable<T>
+        private void Merge(T[] arr, T[] temp, int low, int mid, int high)
         {
             for (int k = low; k <= high; k++)
             {

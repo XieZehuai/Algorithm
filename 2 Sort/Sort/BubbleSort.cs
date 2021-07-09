@@ -2,16 +2,19 @@
 
 namespace _2_Sort
 {
-    class BubbleSort : ISorter
+    /// <summary>
+    /// 冒泡排序
+    /// </summary>
+    public class BubbleSort<T> : IComparisonSorter<T> where T : IComparable<T>
     {
         public string Name => "冒泡排序";
 
-        public void Sort<T>(T[] arr) where T : IComparable<T>
+        public void Sort(T[] arr)
         {
             Sort(arr, 0, arr.Length - 1);
         }
 
-        public void Sort<T>(T[] arr, int low, int high) where T : IComparable<T>
+        public void Sort(T[] arr, int low, int high)
         {
             bool isSorted = false;
             int j = 1;

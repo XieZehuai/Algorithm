@@ -2,20 +2,20 @@
 
 namespace _2_Sort
 {
-    /*
-     * 希尔排序，改进自插入排序，将数组分成固定距离的子数组，
-     * 对子数组进行插入排序，然后缩短距离，继续进行插入排序
-     */
-    class ShellSort : ISorter
+    /// <summary>
+    /// 希尔排序，改进自插入排序，将数组分成固定距离的子数组，
+    /// 对子数组进行插入排序，然后缩短距离，继续进行插入排序
+    /// </summary>
+    public class ShellSort<T> : IComparisonSorter<T> where T : IComparable<T>
     {
         public string Name => "希尔排序";
 
-        public void Sort<T>(T[] arr) where T : IComparable<T>
+        public void Sort(T[] arr)
         {
             Sort(arr, 0, arr.Length - 1);
         }
 
-        public void Sort<T>(T[] arr, int low, int high) where T : IComparable<T>
+        public void Sort(T[] arr, int low, int high)
         {
             int h = 1;
             while (h < arr.Length / 3) h = 3 * h + 1; // 设定初始间距（1、4、13、40、121、364）

@@ -2,11 +2,14 @@
 
 namespace _2_Sort
 {
-    public class HeapSort : ISorter
+    /// <summary>
+    /// 堆排序
+    /// </summary>
+    public class HeapSort<T> : IComparisonSorter<T> where T : IComparable<T>
     {
         public string Name => "堆排序";
 
-        public void Sort<T>(T[] arr) where T : IComparable<T>
+        public void Sort(T[] arr)
         {
             int len = arr.Length;
 
@@ -22,12 +25,12 @@ namespace _2_Sort
             }
         }
 
-        public void Sort<T>(T[] arr, int low, int high) where T : IComparable<T>
+        public void Sort(T[] arr, int low, int high)
         {
             throw new NotImplementedException();
         }
 
-        private void Sink<T>(T[] arr, int k, int length) where T : IComparable<T>
+        private void Sink(T[] arr, int k, int length)
         {
             while (2 * k <= length)
             {

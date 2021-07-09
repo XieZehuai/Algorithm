@@ -2,18 +2,21 @@
 
 namespace _2_Sort
 {
-    class QuickSort : ISorter
+    /// <summary>
+    /// 快速排序
+    /// </summary>
+    public class QuickSort<T> : IComparisonSorter<T> where T : IComparable<T>
     {
         public string Name => "快速排序";
 
-        private InsertSort insertSort = new InsertSort();
+        private readonly InsertSort<T> insertSort = new InsertSort<T>();
 
-        public void Sort<T>(T[] arr) where T : IComparable<T>
+        public void Sort(T[] arr)
         {
             Sort(arr, 0, arr.Length - 1);
         }
 
-        public void Sort<T>(T[] arr, int low, int high) where T : IComparable<T>
+        public void Sort(T[] arr, int low, int high)
         {
             if (high <= low + 10)
             {

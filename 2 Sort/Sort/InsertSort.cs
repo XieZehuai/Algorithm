@@ -1,21 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _2_Sort
 {
-    class InsertSort : ISorter
+    /// <summary>
+    /// 插入排序
+    /// </summary>
+    public class InsertSort<T> : IComparisonSorter<T> where T : IComparable<T>
     {
         public string Name => "插入排序";
 
-        public void Sort<T>(T[] arr) where T : IComparable<T>
+        public void Sort(T[] arr)
         {
             Sort(arr, 0, arr.Length - 1);
         }
 
-        public void Sort<T>(T[] arr, int low, int high) where T : IComparable<T>
+        public void Sort(T[] arr, int low, int high)
         {
             for (int i = low + 1; i <= high; i++)
             {

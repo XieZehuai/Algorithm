@@ -9,38 +9,39 @@ namespace _2_Sort
      */
     public class SortTest
     {
-        private const int dataCount = 500000;
-        private static Stopwatch stopwatch = new Stopwatch();
+        private const int DATA_COUNT = 500000;
+
+        private static readonly Stopwatch stopwatch = new Stopwatch();
+
         private static int[] bestData;
         private static int[] randomData;
         private static int[] worstData;
 
-        private const int flag = 0;
+        private const int FLAG = 0;
 
-        private static BubbleSort bubbleSort = new BubbleSort();
-        private static SelectSort selectSort = new SelectSort();
-        private static InsertSort insertSort = new InsertSort();
-        private static ShellSort shellSort = new ShellSort();
-        private static MergeSort mergeSortBT = new MergeSort(true);
-        private static MergeSort mergeSortBU = new MergeSort(false);
-        private static QuickSort quickSort = new QuickSort();
-        private static HeapSort heapSort = new HeapSort();
-        private static CSharpSort cSharpSort = new CSharpSort();
+        private static BubbleSort<int> bubbleSort = new BubbleSort<int>();
+        private static SelectSort<int> selectSort = new SelectSort<int>();
+        private static InsertSort<int> insertSort = new InsertSort<int>();
+        private static ShellSort<int> shellSort = new ShellSort<int>();
+        private static MergeSort<int> mergeSortBT = new MergeSort<int>(true);
+        private static MergeSort<int> mergeSortBU = new MergeSort<int>(false);
+        private static QuickSort<int> quickSort = new QuickSort<int>();
+        private static HeapSort<int> heapSort = new HeapSort<int>();
+        private static CSharpSort<int> cSharpSort = new CSharpSort<int>();
 
         public static void Test()
         {
-            if (flag == 1)
+            if (FLAG == 1)
             {
                 int[] arr = WorstData(30);
-                //new CSharpSort().Sort(arr);
-                new CSharpSort().Test(arr, (x, y) => y - x);
+                cSharpSort.Sort(arr, (x, y) => y - x);
                 Print(arr);
             }
             else
             {
-                bestData = BestData(dataCount);
-                randomData = RandomData(dataCount);
-                worstData = WorstData(dataCount);
+                bestData = BestData(DATA_COUNT);
+                randomData = RandomData(DATA_COUNT);
+                worstData = WorstData(DATA_COUNT);
 
                 //Test(bubbleSort);
                 //Test(selectSort);
@@ -54,26 +55,26 @@ namespace _2_Sort
             }
         }
 
-        private static void Test(ISorter sorter)
+        private static void Test(ISorter<int> sorter)
         {
-            int[] temp = new int[dataCount];
+            int[] temp = new int[DATA_COUNT];
             Console.WriteLine(sorter.Name);
 
-            Array.Copy(bestData, 0, temp, 0, dataCount);
+            Array.Copy(bestData, 0, temp, 0, DATA_COUNT);
             Console.WriteLine("    最好：" + Sort(sorter, temp));
 
-            Array.Copy(randomData, 0, temp, 0, dataCount);
+            Array.Copy(randomData, 0, temp, 0, DATA_COUNT);
             Console.WriteLine("    随机：" + Sort(sorter, temp));
 
-            Array.Copy(worstData, 0, temp, 0, dataCount);
+            Array.Copy(worstData, 0, temp, 0, DATA_COUNT);
             Console.WriteLine("    最差：" + Sort(sorter, temp) + "\n");
         }
 
-        private static double Sort<T>(ISorter sorter, T[] arr) where T : IComparable<T>
+        private static double Sort<T>(ISorter<T> sorter, T[] data)
         {
             stopwatch.Reset();
             stopwatch.Start();
-            sorter.Sort(arr);
+            sorter.Sort(data);
             stopwatch.Stop();
 
             return stopwatch.Elapsed.TotalMilliseconds;

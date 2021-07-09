@@ -2,16 +2,19 @@
 
 namespace _2_Sort
 {
-    class SelectSort : ISorter
+    /// <summary>
+    /// 选择排序
+    /// </summary>
+    public class SelectSort<T> : IComparisonSorter<T> where T : IComparable<T>
     {
         public string Name => "选择排序";
 
-        public void Sort<T>(T[] arr) where T : IComparable<T>
+        public void Sort(T[] arr)
         {
             Sort(arr, 0, arr.Length - 1);
         }
 
-        public void Sort<T>(T[] arr, int low, int high) where T : IComparable<T>
+        public void Sort(T[] arr, int low, int high)
         {
             for (int i = low; i <= high - 1; i++)
             {

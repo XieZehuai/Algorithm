@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C5E80E41-E0C2-45B5-8609-D31B22A02951}</ProjectGuid>
+    <ProjectGuid>{E59D10B8-04FA-430D-91EE-8F2DBA656882}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_2_Sort</RootNamespace>
-    <AssemblyName>2 Sort</AssemblyName>
+    <RootNamespace>_5_String</RootNamespace>
+    <AssemblyName>5 String</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -22,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +31,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,29 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\ArrayExtension.cs" />
-    <Compile Include="PriorityQueue\HeapPriorityQueue.cs" />
-    <Compile Include="PriorityQueue\IndexPriorityQueue.cs" />
-    <Compile Include="PriorityQueue\PriorityQueue.cs" />
-    <Compile Include="PriorityQueue\QueueNullException.cs" />
-    <Compile Include="Sort\BubbleSort.cs" />
-    <Compile Include="Sort\CSharpSort.cs" />
-    <Compile Include="Sort\HeapSort.cs" />
-    <Compile Include="Sort\InsertSort.cs" />
-    <Compile Include="Sort\ISorter.cs" />
-    <Compile Include="Sort\MergeSort.cs" />
-    <Compile Include="PriorityQueue\OrderedPriorityQueue.cs" />
-    <Compile Include="PriorityQueue\PriorityQueueTest.cs" />
+    <Compile Include="Common\Alphabet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sort\QuickSort.cs" />
-    <Compile Include="Sort\SelectSort.cs" />
-    <Compile Include="Sort\IComparisonSorter.cs" />
-    <Compile Include="Sort\ShellSort.cs" />
-    <Compile Include="Sort\SortTest.cs" />
+    <Compile Include="StringSort\LSD.cs" />
+    <Compile Include="StringSort\MSD.cs" />
+    <Compile Include="StringSort\Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\2 Sort\2 Sort.csproj">
+      <Project>{c5e80e41-e0c2-45b5-8609-d31b22a02951}</Project>
+      <Name>2 Sort</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
