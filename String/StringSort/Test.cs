@@ -14,10 +14,10 @@ namespace _5_String.StringSort
 
         public static void Invoke()
         {
-            string[] originData = GenerateTestData(LENGTH, W);
+            string[] rawData = GenerateTestData(LENGTH, W);
 
-            SortTest(new LSD(W), originData);
-            SortTest(new CSharpSort<string>(), originData);
+            SortTest(new LSD(W), rawData);
+            SortTest(new CSharpSort<string>(), rawData);
         }
 
         private static void SortTest(ISorter<string> sorter, string[] originData)
