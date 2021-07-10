@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringSort\LSD.cs" />
     <Compile Include="StringSort\MSD.cs" />
+    <Compile Include="StringSort\Quick3StringSort.cs" />
     <Compile Include="StringSort\Test.cs" />
   </ItemGroup>
   <ItemGroup>

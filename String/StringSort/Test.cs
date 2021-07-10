@@ -14,12 +14,14 @@ namespace _5_String.StringSort
 
         public static void Invoke()
         {
-            //string[] rawData = GenerateTestData(10, 5, 10);
-            //CorrectnessTest(new MSD(15), rawData);
+            //string[] data = GenerateTestData(10, 5, 10);
+            //CorrectnessTest(new Quick3StringSort(), data);
 
-            string[] rawData = GenerateTestData(LENGTH, 20);
+            string[] rawData = GenerateTestData(LENGTH, W);
             EfficiencyTest(new LSD(W), rawData);
             EfficiencyTest(new MSD(new QuickSort<string>(), 10), rawData);
+            EfficiencyTest(new Quick3StringSort(), rawData);
+            EfficiencyTest(new QuickSort<string>(), rawData);
             EfficiencyTest(new CSharpSort<string>(), rawData);
         }
 
