@@ -50,6 +50,9 @@
     <Compile Include="StringSort\MSD.cs" />
     <Compile Include="StringSort\Quick3StringSort.cs" />
     <Compile Include="StringSort\Test.cs" />
+    <Compile Include="Common\StringSymbolTable.cs" />
+    <Compile Include="Tries\Test.cs" />
+    <Compile Include="Tries\TrieSymbolTable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -58,6 +61,10 @@
     <ProjectReference Include="..\2 Sort\2 Sort.csproj">
       <Project>{c5e80e41-e0c2-45b5-8609-d31b22a02951}</Project>
       <Name>2 Sort</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\3 Searching\3 Searching.csproj">
+      <Project>{d3d12556-6e44-4153-bfa9-839a92137a84}</Project>
+      <Name>3 Searching</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
