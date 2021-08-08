@@ -16,7 +16,8 @@ namespace _5_String.Tries
             table.Put("hollowknig", 4);
             table.Put("haven", 5);
 
-            Console.WriteLine(table.LongestPrefixOf("hollowknight"));
+            Console.WriteLine(table.Contains("hello"));
+            Console.WriteLine(table.Contains("haa"));
         }
     }
 }

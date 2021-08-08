@@ -48,7 +48,7 @@
     <Compile Include="Common\ArrayExtension.cs" />
     <Compile Include="PriorityQueue\HeapPriorityQueue.cs" />
     <Compile Include="PriorityQueue\IndexPriorityQueue.cs" />
-    <Compile Include="PriorityQueue\PriorityQueue.cs" />
+    <Compile Include="PriorityQueue\IPriorityQueue.cs" />
     <Compile Include="PriorityQueue\QueueNullException.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\CSharpSort.cs" />

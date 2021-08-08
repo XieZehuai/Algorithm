@@ -48,10 +48,19 @@ namespace _5_String.Tries
 
         public override IEnumerable<string> Keys => KeysWithPrefix(string.Empty);
 
+        public override IEnumerable<TV> Values
+        {
+            get
+            {
+                List<TV> list = new List<TV>();
+                CollectValues(root, list);
+                return list;
+            }
+        }
+
         public override bool Contains(string key)
         {
-            // TODO
-            throw new System.NotImplementedException();
+            return Contains(root, key, 0);
         }
 
         public override void Put(string key, TV value)
@@ -69,7 +78,7 @@ namespace _5_String.Tries
 
         public override void Delete(string key)
         {
-            throw new System.NotImplementedException();
+            Delete(root, key, 0);
         }
 
         public override IEnumerator<KeyValue<string, TV>> GetEnumerator()
@@ -80,14 +89,14 @@ namespace _5_String.Tries
         public override IEnumerable<string> KeysThatMatch(string pattern)
         {
             List<string> list = new List<string>();
-            Collect(root, "", pattern, list);
+            CollectKeys(root, "", pattern, list);
             return list;
         }
 
         public override IEnumerable<string> KeysWithPrefix(string prefix)
         {
             List<string> list = new List<string>();
-            Collect(Get(root, prefix, 0), prefix, list);
+            CollectKeys(Get(root, prefix, 0), prefix, list);
             return list;
         }
 
@@ -99,6 +108,22 @@ namespace _5_String.Tries
 
 
         /************************** 私有方法 **************************/
+
+        private bool Contains(Node node, string key, int d)
+        {
+            if (node == null) return false;
+            if (d == key.Length) return !node.isEmpty;
+
+            for (int i = 0; i < R; i++)
+            {
+                if (Contains(node.nodes[i], key, d + 1))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
 
         private Node Put(Node node, string key, TV value, int d)
         {
@@ -126,7 +151,7 @@ namespace _5_String.Tries
         }
 
         // 获取以node为根的树所有节点的键
-        private void Collect(Node node, string str, List<string> list)
+        private void CollectKeys(Node node, string str, List<string> list)
         {
             if (node == null) return;
 
@@ -138,12 +163,12 @@ namespace _5_String.Tries
             for (int i = 0; i < node.nodes.Length; i++)
             {
                 string s = str + (char)(i + 'a');
-                Collect(node.nodes[i], s, list);
+                CollectKeys(node.nodes[i], s, list);
             }
         }
 
         // 获取所有与pattern匹配的键
-        private void Collect(Node node, string prefix, string pattern, List<string> list)
+        private void CollectKeys(Node node, string prefix, string pattern, List<string> list)
         {
             if (node == null) return;
 
@@ -161,8 +186,23 @@ namespace _5_String.Tries
                 char c = (char)(i + 'a');
                 if (next == '*' || next == c)
                 {
-                    Collect(node.nodes[i], prefix + c, pattern, list);
+                    CollectKeys(node.nodes[i], prefix + c, pattern, list);
                 }
+            }
+        }
+
+        private void CollectValues(Node node, List<TV> list)
+        {
+            if (node == null) return;
+
+            if (!node.isEmpty)
+            {
+                list.Add(node.value);
+            }
+
+            for (int i = 0; i < R; i++)
+            {
+                CollectValues(node.nodes[i], list);
             }
         }
 
@@ -174,6 +214,33 @@ namespace _5_String.Tries
 
             int index = str[d] - 'a';
             return Search(node.nodes[index], str, d + 1, length);
+        }
+
+        private Node Delete(Node node, string key, int d)
+        {
+            if (node == null) return null;
+
+            if (d == key.Length)
+            {
+                node.isEmpty = true;
+            }
+            else
+            {
+                int index = key[d] - 'a';
+                node.nodes[index] = Delete(node.nodes[index], key, d + 1);
+            }
+
+            if (!node.isEmpty) return node;
+
+            for (int i = 0; i < R; i++)
+            {
+                if (!node.nodes[i].isEmpty)
+                {
+                    return node;
+                }
+            }
+
+            return null;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace _2_Sort.PriorityQueue
     {
         private int capacity;
         private int count;
-        private int[] heap; // 二叉堆，索引从1开始（索引为1 - n，长度为n + 1）
+        private int[] heap; // 二叉堆，索引从1开始（索引为1 ~ n，长度为n + 1）
         private int[] inverseHeap; // heap的反向（inverseHeap[heap[i]] = heap[inverseHeap[i]] = i）
         private T[] keys;
 

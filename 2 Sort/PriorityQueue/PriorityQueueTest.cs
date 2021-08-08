@@ -30,7 +30,7 @@ namespace _2_Sort.PriorityQueue
 
         public static void Test()
         {
-            PriorityQueue<Person> pq = new HeapPriorityQueue<Person>(3);
+            IPriorityQueue<Person> pq = new HeapPriorityQueue<Person>(3);
 
             while (true)
             {

@@ -5,7 +5,7 @@ namespace _2_Sort.PriorityQueue
     /// <summary>
     /// 有序的优先队列，删除操作O(1)时间，插入操作O(n)时间
     /// </summary>
-    public class OrderedPriorityQueue<T> : PriorityQueue<T> where T : IComparable<T>
+    public class OrderedPriorityQueue<T> : IPriorityQueue<T> where T : IComparable<T>
     {
         protected T[] datas; // 保存所有数据
         protected int size; // 当前数据个数
@@ -22,13 +22,13 @@ namespace _2_Sort.PriorityQueue
             size = 0;
         }
 
-        public override bool IsEmpty => size == 0;
+        public bool IsEmpty => size == 0;
 
-        public override int Size => size;
+        public int Size => size;
 
-        public override int Capacity => capacity;
+        public int Capacity => capacity;
 
-        public override void Insert(T value)
+        public virtual void Insert(T value)
         {
             if (size >= capacity)
             {
@@ -50,21 +50,21 @@ namespace _2_Sort.PriorityQueue
             size++;
         }
 
-        public override T Max()
+        public virtual T Max()
         {
             return datas[size - 1];
         }
 
-        public override T DeleteMax()
+        public virtual T DeleteMax()
         {
             return datas[--size];
         }
 
-        public override void Print()
+        public virtual void Print()
         {
             for (int i = 0; i < size; i++)
             {
-                Console.WriteLine(datas[i].ToString());
+                Console.WriteLine(datas[i]);
             }
         }
 
