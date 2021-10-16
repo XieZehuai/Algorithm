@@ -46,6 +46,7 @@
     <Compile Include="Common\Alphabet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringSort\BaseSort.cs" />
     <Compile Include="StringSort\LSD.cs" />
     <Compile Include="StringSort\MSD.cs" />
     <Compile Include="StringSort\Quick3StringSort.cs" />

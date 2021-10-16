@@ -73,6 +73,13 @@ namespace _5_String
                 charToIndex.Add(c, i);
                 indexToChar.Add(i, c);
             }
+
+            R = charToIndex.Count;
+            LgR = 0;
+            for (int t = R - 1; t >= 1; t /= 2)
+            {
+                LgR++;
+            }
         }
 
         public Alphabet(string alpha)
@@ -85,23 +92,18 @@ namespace _5_String
                     indexToChar.Add(i, alpha[i]);
                 }
             }
-        }
 
-        public int R => charToIndex.Count;
-
-        public int LgR
-        {
-            get
+            R = charToIndex.Count;
+            LgR = 0;
+            for (int t = R - 1; t >= 1; t /= 2)
             {
-                int lgR = 0;
-                for (int t = R - 1; t >= 1; t /= 2)
-                {
-                    lgR++;
-                }
-
-                return LgR;
+                LgR++;
             }
         }
+
+        public int R { get; }
+
+        public int LgR { get; }
 
         public char GetChar(int index)
         {

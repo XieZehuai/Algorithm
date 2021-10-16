@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using _2_Sort;
@@ -14,6 +15,23 @@ namespace _5_String.StringSort
 
         public static void Invoke()
         {
+            List<(int, string)> students = new List<(int, string)>();
+            students.Add((1, "小明"));
+            students.Add((2, "小红"));
+            students.Add((3, "小兰"));
+            students.Add((2, "小绿"));
+            students.Add((3, "小黄"));
+            students.Add((1, "小华"));
+            students.Add((1, "小紫"));
+            students.Add((4, "小黑"));
+
+            BaseSort baseSort = new BaseSort();
+            baseSort.Sort(students, 5);
+            foreach (var student in students)
+            {
+                Console.WriteLine(student.Item1 + " " + student.Item2);
+            }
+
             //string[] data = GenerateTestData(10, 5, 10);
             //CorrectnessTest(new Quick3StringSort(), data);
 
@@ -25,6 +43,11 @@ namespace _5_String.StringSort
             EfficiencyTest(new CSharpSort<string>(), rawData);
         }
 
+        /// <summary>
+        /// 测试排序算法是否正确实现
+        /// </summary>
+        /// <param name="sorter">要测试的算法</param>
+        /// <param name="rawData">测试使用的数据</param>
         private static void CorrectnessTest(ISorter<string> sorter, string[] rawData)
         {
             string[] data1 = new string[rawData.Length];

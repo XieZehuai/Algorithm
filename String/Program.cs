@@ -6,7 +6,7 @@ namespace _5_String
     {
         private static void Main(string[] args)
         {
-            Tries.Test.Invoke();
+            StringSort.Test.Invoke();
         }
     }
 }
