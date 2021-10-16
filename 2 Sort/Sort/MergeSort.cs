@@ -10,7 +10,7 @@ namespace _2_Sort
         public string Name => top ? "归并排序：自顶向下" : "归并排序：自底向上";
 
         private readonly bool top;
-        private readonly InsertSort<T> insertSort = new InsertSort<T>();
+        private readonly IComparisonSorter<T> insertSort = new InsertSort<T>();
 
         public MergeSort(bool top)
         {
@@ -47,6 +47,7 @@ namespace _2_Sort
             SortBT(arr, temp, low, mid);
             SortBT(arr, temp, mid + 1, high);
 
+            // 如果左半部分的最大值比右半部分的最小值小，说明已经是有序的，不需要合并
             if (arr[mid].CompareTo(arr[mid + 1]) <= 0) return;
             Merge(arr, temp, low, mid, high);
         }

@@ -9,7 +9,7 @@ namespace _2_Sort
     {
         public string Name => "快速排序";
 
-        private readonly InsertSort<T> insertSort = new InsertSort<T>();
+        private readonly IComparisonSorter<T> insertSort = new InsertSort<T>();
 
         public void Sort(T[] arr)
         {

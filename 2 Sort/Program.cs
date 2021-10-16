@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using _2_Sort.PriorityQueue;
 
 namespace _2_Sort
 {
@@ -7,61 +7,13 @@ namespace _2_Sort
     {
         private static void Main(string[] args)
         {
-            Queue<int> q = new Queue<int>();
-            int[] data = new int[20];
-            Random rd = new Random();
-            PriorityQueue<int> queue = new PriorityQueue<int>(Compare: (a, b) =>
-            {
-                return b - a;
-            });
+            int[] data = new int[] { 6, 78, 45, 34, 1, 6, 8, 3 };
+            PriorityQueue<int> queue = new PriorityQueue<int>(data);
 
-            for (int i = 0; i < data.Length; i++)
+            while (!queue.IsEmpty)
             {
-                data[i] = i;
-                q.Enqueue(i * 2);
-                Console.Write(data[i] + " ");
+                Console.Write(queue.Dequeue() + " ");
             }
-            Console.WriteLine();
-
-            int k = 10;
-            for (int i = 0; i < k; i++)
-            {
-                queue.Enqueue(data[i]);
-            }
-
-            for (int i = k; i < data.Length; i++)
-            {
-                if (data[i] > queue.Peek())
-                {
-                    queue.Dequeue();
-                    queue.Enqueue(data[i]);
-                }
-            }
-
-            foreach (var item in queue)
-            {
-                Console.WriteLine(item);
-            }
-        }
-    }
-
-    internal class Test : IComparable<Test>
-    {
-        public int id;
-
-        public Test(int id)
-        {
-            this.id = id;
-        }
-
-        public int CompareTo(Test other)
-        {
-            return id - other.id;
-        }
-
-        public override string ToString()
-        {
-            return id.ToString();
         }
     }
 }
