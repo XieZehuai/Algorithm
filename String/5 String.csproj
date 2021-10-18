@@ -52,6 +52,9 @@
     <Compile Include="StringSort\Quick3StringSort.cs" />
     <Compile Include="StringSort\Test.cs" />
     <Compile Include="Common\StringSymbolTable.cs" />
+    <Compile Include="SubstringSearch\BruteForce.cs" />
+    <Compile Include="SubstringSearch\ISubstringSearch.cs" />
+    <Compile Include="SubstringSearch\Test.cs" />
     <Compile Include="Tries\Test.cs" />
     <Compile Include="Tries\TrieSymbolTable.cs" />
   </ItemGroup>
@@ -66,6 +69,10 @@
     <ProjectReference Include="..\3 Searching\3 Searching.csproj">
       <Project>{d3d12556-6e44-4153-bfa9-839a92137a84}</Project>
       <Name>3 Searching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Test\Test.csproj">
+      <Project>{12f23ffa-3484-403c-b620-bf3ad445dd61}</Project>
+      <Name>Test</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

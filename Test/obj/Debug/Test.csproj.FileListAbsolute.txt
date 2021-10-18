@@ -1,0 +1,6 @@
+E:\Code\C#\Algorithm\Test\bin\Debug\Test.dll
+E:\Code\C#\Algorithm\Test\bin\Debug\Test.pdb
+E:\Code\C#\Algorithm\Test\obj\Debug\Test.csprojAssemblyReference.cache
+E:\Code\C#\Algorithm\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+E:\Code\C#\Algorithm\Test\obj\Debug\Test.dll
+E:\Code\C#\Algorithm\Test\obj\Debug\Test.pdb

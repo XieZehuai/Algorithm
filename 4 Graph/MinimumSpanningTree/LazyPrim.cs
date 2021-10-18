@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using _2_Sort.PriorityQueue;
 
 namespace _4_Graph.MinimumSpanningTree
@@ -8,7 +7,7 @@ namespace _4_Graph.MinimumSpanningTree
     {
         private bool[] marked;
         private Queue<UndirectedEdge> mst;
-        private PriorityQueue<UndirectedEdge> priorityQueue;
+        private IPriorityQueue<UndirectedEdge> priorityQueue;
         private float weight;
 
         public LazyPrim(EdgeWeightedGraph graph) : base(graph)

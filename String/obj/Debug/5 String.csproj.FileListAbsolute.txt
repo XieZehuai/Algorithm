@@ -12,3 +12,5 @@ E:\Code\C#\Algorithm\String\obj\Debug\5 String.csproj.CopyComplete
 E:\Code\C#\Algorithm\String\bin\Debug\3 Searching.exe
 E:\Code\C#\Algorithm\String\bin\Debug\3 Searching.pdb
 E:\Code\C#\Algorithm\String\bin\Debug\3 Searching.exe.config
+E:\Code\C#\Algorithm\String\bin\Debug\Test.dll
+E:\Code\C#\Algorithm\String\bin\Debug\Test.pdb

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using _1_Basics;
 using _2_Sort.PriorityQueue;
 
@@ -15,7 +12,7 @@ namespace _4_Graph.MinimumSpanningTree
         public Kruskal(EdgeWeightedGraph graph) : base(graph)
         {
             mst = new Queue<UndirectedEdge>();
-            PriorityQueue<UndirectedEdge> priorityQueue = new HeapPriorityQueue<UndirectedEdge>(graph.Edges());
+            IPriorityQueue<UndirectedEdge> priorityQueue = new HeapPriorityQueue<UndirectedEdge>(graph.Edges());
             UnionFind unionFind = new UnionFind(graph.VertexCount);
 
             while (!priorityQueue.IsEmpty && mst.Count < graph.VertexCount - 1)

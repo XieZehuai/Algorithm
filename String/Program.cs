@@ -1,12 +1,10 @@
-﻿using System.Dynamic;
-
-namespace _5_String
+﻿namespace _5_String
 {
-    internal class Program : DynamicObject
+    internal class Program
     {
         private static void Main(string[] args)
         {
-            StringSort.Test.Invoke();
+            SubstringSearch.Test.Invoke();
         }
     }
 }
