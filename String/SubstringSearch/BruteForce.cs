@@ -2,6 +2,8 @@
 {
     public class BruteForce : ISubstringSearcher
     {
+        public string Name => "Brute Force";
+
         public int Search(string text, string pattern)
         {
             int n = text.Length;

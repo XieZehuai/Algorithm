@@ -52,8 +52,11 @@
     <Compile Include="StringSort\Quick3StringSort.cs" />
     <Compile Include="StringSort\Test.cs" />
     <Compile Include="Common\StringSymbolTable.cs" />
+    <Compile Include="SubstringSearch\BoyerMoore.cs" />
     <Compile Include="SubstringSearch\BruteForce.cs" />
+    <Compile Include="SubstringSearch\CSharpImplement.cs" />
     <Compile Include="SubstringSearch\ISubstringSearch.cs" />
+    <Compile Include="SubstringSearch\FiniteStateAutomata.cs" />
     <Compile Include="SubstringSearch\Test.cs" />
     <Compile Include="Tries\Test.cs" />
     <Compile Include="Tries\TrieSymbolTable.cs" />

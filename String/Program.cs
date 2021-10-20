@@ -1,4 +1,8 @@
-﻿namespace _5_String
+﻿using System.Collections.Generic;
+using System.IO;
+using System;
+
+namespace _5_String
 {
     internal class Program
     {
