@@ -1,20 +1,25 @@
-﻿namespace _5_String.SubstringSearch
+﻿using System.Collections.Generic;
+
+namespace _5_String.SubstringSearch
 {
-    public class BoyerMoore : ISubstringSearcher
+    public class GeneralBoyerMoore : ISubstringSearcher
     {
-        public string Name => "Boyer-Moore";
+        public string Name => "General Boyer-Moore";
 
         public int Search(string text, string pattern)
         {
             int n = text.Length, m = pattern.Length;
-            int[] right = new int[26];
-            for (int i = 0; i < 26; i++)
-            {
-                right[i] = -1;
-            }
+            Dictionary<char, int> right = new Dictionary<char, int>();
             for (int i = 0; i < m; i++)
             {
-                right[pattern[i] - 'a'] = i;
+                if (!right.ContainsKey(pattern[i]))
+                {
+                    right.Add(pattern[i], i);
+                }
+                else
+                {
+                    right[pattern[i]] = i;
+                }
             }
 
             int skip;
@@ -25,7 +30,8 @@
                 {
                     if (pattern[j] != text[i + j])
                     {
-                        skip = j - right[text[i + j] - 'a'];
+                        int r = right.ContainsKey(text[i + j]) ? right[text[i + j]] : -1;
+                        skip = j - r;
                         if (skip < 1) skip = 1;
                         break;
                     }

@@ -5,8 +5,9 @@ namespace _5_String.SubstringSearch
 {
     public static class Test
     {
-        private const int TEXT_LENGTH = 100000;
+        private const int TEXT_LENGTH = 2000000;
         private const int PATTERN_LENGTH = 20;
+        private const int TEST_TIMES = 20;
 
         private static string bestText;
         private static string bestPattern;
@@ -14,6 +15,8 @@ namespace _5_String.SubstringSearch
         private static string normalPattern;
         private static string worstText;
         private static string worstPattern;
+
+        private static Random random = new Random(DateTime.Now.Second);
 
         static Test()
         {
@@ -52,22 +55,49 @@ namespace _5_String.SubstringSearch
 
         public static void Invoke()
         {
+            //CorrectnessTest(new BruteForce());
+            //CorrectnessTest(new FiniteStateAutomata());
+            //CorrectnessTest(new BoyerMoore());
+            //CorrectnessTest(new CSharpImplement());
+            //CorrectnessTest(new KMP());
+            //CorrectnessTest(new GeneralBoyerMoore());
+
             EfficiencyTest(new BruteForce());
             EfficiencyTest(new FiniteStateAutomata());
+            EfficiencyTest(new KMP());
             EfficiencyTest(new BoyerMoore());
+            EfficiencyTest(new GeneralBoyerMoore());
             EfficiencyTest(new CSharpImplement());
         }
 
         private static void CorrectnessTest(ISubstringSearcher searcher)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 9; i++)
             {
+                int result, n;
                 string text = RandomString(15);
-                string pattern = text.Substring(8, 5);
-                int result = searcher.Search(text, pattern);
-                if (result != 8)
+                string pattern;
+
+                if (i < 3)
                 {
-                    Console.WriteLine($"{searcher.Name} 实现错误");
+                    pattern = text;
+                    n = 0;
+                }
+                else if (i < 6)
+                {
+                    pattern = text.Substring(8, 5);
+                    n = 8;
+                }
+                else
+                {
+                    pattern = "zzzzzzzz";
+                    n = -1;
+                }
+
+                result = searcher.Search(text, pattern);
+                if (result != n)
+                {
+                    Console.WriteLine($"{searcher.Name} 实现错误，result = {result.ToString()}");
                     Console.WriteLine(text);
                     Console.WriteLine(pattern);
                     return;
@@ -88,7 +118,7 @@ namespace _5_String.SubstringSearch
         private static long Counting(ISubstringSearcher searcher, string text, string pattern)
         {
             long cost = 0L;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < TEST_TIMES; i++)
             {
                 cost += Timer.Counting(false, () => searcher.Search(text, pattern));
             }
@@ -99,7 +129,6 @@ namespace _5_String.SubstringSearch
         private static string RandomString(int length)
         {
             char[] c = new char[length];
-            Random random = new Random();
 
             for (int i = 0; i < length; i++)
             {

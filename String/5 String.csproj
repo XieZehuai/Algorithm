@@ -55,8 +55,10 @@
     <Compile Include="SubstringSearch\BoyerMoore.cs" />
     <Compile Include="SubstringSearch\BruteForce.cs" />
     <Compile Include="SubstringSearch\CSharpImplement.cs" />
+    <Compile Include="SubstringSearch\GeneralBoyerMoore.cs" />
     <Compile Include="SubstringSearch\ISubstringSearch.cs" />
     <Compile Include="SubstringSearch\FiniteStateAutomata.cs" />
+    <Compile Include="SubstringSearch\KMP.cs" />
     <Compile Include="SubstringSearch\Test.cs" />
     <Compile Include="Tries\Test.cs" />
     <Compile Include="Tries\TrieSymbolTable.cs" />

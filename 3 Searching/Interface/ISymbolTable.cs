@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace _3_Searching
 {
@@ -9,12 +8,12 @@ namespace _3_Searching
     public interface ISymbolTable<TKey, TValue>
     {
         /// <summary>
-        /// 表是否为空
+        /// 符号表是否为空
         /// </summary>
         bool IsEmpty { get; }
 
         /// <summary>
-        /// 当前元素个数
+        /// 当前符号表中键值对个数
         /// </summary>
         int Size { get; }
 
@@ -29,7 +28,7 @@ namespace _3_Searching
         IEnumerable<TValue> Values { get; }
 
         /// <summary>
-        /// 向表中添加一个键值对
+        /// 向表中添加一个键值对，如果符号表中没有对应的键，则会创建一个
         /// </summary>
         /// <param name="key">键</param>
         /// <param name="value">值</param>

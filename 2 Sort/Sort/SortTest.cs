@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using static _2_Sort.PriorityQueue.PriorityQueueTest;
 
 namespace _2_Sort
 {
