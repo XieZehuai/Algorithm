@@ -44,8 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Alphabet.cs" />
+    <Compile Include="DataCompression\BinaryInput.cs" />
+    <Compile Include="DataCompression\BinaryOutput.cs" />
+    <Compile Include="DataCompression\Test.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegularExpression\NondeterministicFiniteStateAutomata.cs" />
+    <Compile Include="RegularExpression\Test.cs" />
     <Compile Include="StringSort\BaseSort.cs" />
     <Compile Include="StringSort\LSD.cs" />
     <Compile Include="StringSort\MSD.cs" />
@@ -57,7 +62,7 @@
     <Compile Include="SubstringSearch\CSharpImplement.cs" />
     <Compile Include="SubstringSearch\GeneralBoyerMoore.cs" />
     <Compile Include="SubstringSearch\ISubstringSearch.cs" />
-    <Compile Include="SubstringSearch\FiniteStateAutomata.cs" />
+    <Compile Include="SubstringSearch\DeterministicFiniteStateAutomata.cs" />
     <Compile Include="SubstringSearch\KMP.cs" />
     <Compile Include="SubstringSearch\Test.cs" />
     <Compile Include="Tries\Test.cs" />
@@ -67,6 +72,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\1 Basics\1 Basics.csproj">
+      <Project>{438725B0-D13E-42AD-B51B-F90F30217320}</Project>
+      <Name>1 Basics</Name>
+    </ProjectReference>
     <ProjectReference Include="..\2 Sort\2 Sort.csproj">
       <Project>{c5e80e41-e0c2-45b5-8609-d31b22a02951}</Project>
       <Name>2 Sort</Name>
@@ -75,10 +84,15 @@
       <Project>{d3d12556-6e44-4153-bfa9-839a92137a84}</Project>
       <Name>3 Searching</Name>
     </ProjectReference>
+    <ProjectReference Include="..\4 Graph\4 Graph.csproj">
+      <Project>{4f596965-dd69-4c13-b33e-93f537c2a955}</Project>
+      <Name>4 Graph</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Test\Test.csproj">
       <Project>{12f23ffa-3484-403c-b620-bf3ad445dd61}</Project>
       <Name>Test</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

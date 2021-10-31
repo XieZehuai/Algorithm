@@ -14,3 +14,8 @@ E:\Code\C#\Algorithm\String\bin\Debug\3 Searching.pdb
 E:\Code\C#\Algorithm\String\bin\Debug\3 Searching.exe.config
 E:\Code\C#\Algorithm\String\bin\Debug\Test.dll
 E:\Code\C#\Algorithm\String\bin\Debug\Test.pdb
+E:\Code\C#\Algorithm\String\bin\Debug\1 Basics.exe
+E:\Code\C#\Algorithm\String\bin\Debug\4 Graph.exe
+E:\Code\C#\Algorithm\String\bin\Debug\1 Basics.pdb
+E:\Code\C#\Algorithm\String\bin\Debug\1 Basics.exe.config
+E:\Code\C#\Algorithm\String\bin\Debug\4 Graph.pdb

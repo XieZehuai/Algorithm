@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace _1_Basics
 {
     /// <summary>
-    /// 泛型背包，只能添加元素和遍历所有元素
+    /// 泛型背包，只能添加元素和按顺序遍历所有元素，无法修改及随机访问
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Bag<T> : IEnumerable<T>

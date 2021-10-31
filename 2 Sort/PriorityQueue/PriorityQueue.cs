@@ -3,12 +3,21 @@ using System.Collections.Generic;
 
 namespace _2_Sort.PriorityQueue
 {
+    /// <summary>
+    /// 优先队列，使用IComparable接口比较元素优先级，可以设置该队列
+    /// 为最大优先队列或是最小优先队列，最大优先队列中元素值越大优先
+    /// 级越高，最小优先队列相反
+    /// </summary>
+    /// <typeparam name="T">实现IComparable接口的类型</typeparam>
     public class PriorityQueue<T> where T : IComparable<T>
     {
         private T[] items;
         private int size;
         private readonly Func<T, T, int> compare;
 
+        /// <summary>
+        /// 创建一个优先队列，默认创建的是最小优先队列
+        /// </summary>
         public PriorityQueue(bool maxHeap = false, int capacity = 4)
         {
             items = new T[capacity];
@@ -24,6 +33,9 @@ namespace _2_Sort.PriorityQueue
             }
         }
 
+        /// <summary>
+        /// 创建一个优先队列，默认创建的是最小优先队列，并插入初始数据
+        /// </summary>
         public PriorityQueue(IEnumerable<T> data, bool maxHeap = false, int capacity = 4) : this(maxHeap, capacity)
         {
             foreach (var item in data)
@@ -32,10 +44,19 @@ namespace _2_Sort.PriorityQueue
             }
         }
 
+        /// <summary>
+        /// 队列是否为空
+        /// </summary>
         public bool IsEmpty => size == 0;
 
+        /// <summary>
+        /// 当前队列中元素的个数
+        /// </summary>
         public int Count => size;
 
+        /// <summary>
+        /// 将一个元素入队
+        /// </summary>
         public void Enqueue(T item)
         {
             if (size == items.Length)
@@ -47,6 +68,9 @@ namespace _2_Sort.PriorityQueue
             Swim(size++);
         }
 
+        /// <summary>
+        /// 获取队列头部元素，即优先级最高的元素
+        /// </summary>
         public T Peek()
         {
             if (IsEmpty)
@@ -57,6 +81,9 @@ namespace _2_Sort.PriorityQueue
             return items[0];
         }
 
+        /// <summary>
+        /// 将优先级最高的元素出队
+        /// </summary>
         public T Dequeue()
         {
             if (IsEmpty)
@@ -71,6 +98,9 @@ namespace _2_Sort.PriorityQueue
             return max;
         }
 
+        /// <summary>
+        /// 清除队列中的所有元素
+        /// </summary>
         public void Clear()
         {
             if (size > 0)

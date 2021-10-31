@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using _3_Searching.Hash;
 
 namespace _3_Searching
@@ -19,11 +16,12 @@ namespace _3_Searching
 
         public static void Test()
         {
+            Console.WriteLine("输入 1 测试所有符号表效率，输入 2 测试符号表实现");
             int flag = int.Parse(Console.ReadLine() ?? "0");
 
             if (flag == 1)
             {
-                // Test(new SequentialSearchSymbolTable<string, int>());
+                Test(new SequentialSearchSymbolTable<string, int>());
                 Test(new BinarySearchSymbolTable<string, int>(2));
                 Test(new BinarySearchTreeSymbolTable<string, int>());
                 Test(new RedBlackTreeSymbolTable<string, int>());
@@ -59,8 +57,7 @@ namespace _3_Searching
         private static void Test(SymbolTable<string, int> symbolTable)
         {
             Console.WriteLine(symbolTable.Name);
-            watch.Reset();
-            watch.Start();
+            watch.Restart();
 
             for (int t = 0; t < TEST_TIMES; t++)
             {
@@ -88,8 +85,8 @@ namespace _3_Searching
 
             watch.Stop();
 
-            Console.WriteLine("  单词：" + temp.Key);
-            Console.WriteLine("  次数：" + temp.Value);
+            Console.WriteLine("  出现次数最多的单词：" + temp.Key);
+            Console.WriteLine("  出现的次数：" + temp.Value);
             Console.WriteLine("  用时：" + watch.Elapsed.TotalMilliseconds + " 毫秒\n");
         }
 

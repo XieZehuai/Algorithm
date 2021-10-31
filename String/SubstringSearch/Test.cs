@@ -5,9 +5,9 @@ namespace _5_String.SubstringSearch
 {
     public static class Test
     {
-        private const int TEXT_LENGTH = 2000000;
+        private const int TEXT_LENGTH = 1000000;
         private const int PATTERN_LENGTH = 20;
-        private const int TEST_TIMES = 20;
+        private const int TEST_TIMES = 10;
 
         private static string bestText;
         private static string bestPattern;
@@ -62,12 +62,20 @@ namespace _5_String.SubstringSearch
             //CorrectnessTest(new KMP());
             //CorrectnessTest(new GeneralBoyerMoore());
 
-            EfficiencyTest(new BruteForce());
-            EfficiencyTest(new FiniteStateAutomata());
-            EfficiencyTest(new KMP());
-            EfficiencyTest(new BoyerMoore());
-            EfficiencyTest(new GeneralBoyerMoore());
-            EfficiencyTest(new CSharpImplement());
+            ISubstringSearcher[] searchers = new ISubstringSearcher[]
+            {
+                new BruteForce(),
+                new DeterministicFiniteStateAutomata(),
+                new KMP(),
+                new BoyerMoore(),
+                new GeneralBoyerMoore(),
+                //new CSharpImplement(),
+            };
+
+            foreach (var item in searchers)
+            {
+                EfficiencyTest(item);
+            }
         }
 
         private static void CorrectnessTest(ISubstringSearcher searcher)

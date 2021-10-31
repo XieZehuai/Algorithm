@@ -4,6 +4,11 @@ using System.Collections.Generic;
 
 namespace _2_Sort.PriorityQueue
 {
+    /// <summary>
+    /// 索引优先队列，使用一个单独的索引数组保存元素在数组中的位置，在插入元素时，
+    /// 可以看作将一个整数索引与元素相关联，并可以通过该索引引用目标元素
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class IndexPriorityQueue<T> : IEnumerable<int> where T : IComparable<T>
     {
         private int capacity;

@@ -1,7 +1,9 @@
-﻿namespace _4_Graph.GraphSearchAlgorithm
+﻿using System.Collections.Generic;
+
+namespace _4_Graph.GraphSearchAlgorithm
 {
     /// <summary>
-    /// 基于深度优先搜索的图搜索算法
+    /// 基于深度优先搜索的图搜索算法，用于寻找目标图中给定节点所有可达的节点
     /// </summary>
     public class DepthFirstSearch : IGraphSearch
     {
@@ -10,14 +12,22 @@
 
         public virtual string Name => "深度优先搜索";
 
-        public DepthFirstSearch()
-        {
-        }
-
         public DepthFirstSearch(IGraph graph, int vertex)
         {
             isConnected = new bool[graph.VertexCount];
             DFS(graph, vertex);
+        }
+
+        public DepthFirstSearch(IGraph graph, IEnumerable<int> vertices)
+        {
+            isConnected = new bool[graph.VertexCount];
+            foreach (var v in vertices)
+            {
+                if (!isConnected[v])
+                {
+                    DFS(graph, v);
+                }
+            }
         }
 
         public virtual bool IsConnectedTo(int target)

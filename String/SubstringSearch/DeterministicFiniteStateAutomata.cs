@@ -1,8 +1,8 @@
 ﻿namespace _5_String.SubstringSearch
 {
-    public class FiniteStateAutomata : ISubstringSearcher
+    public class DeterministicFiniteStateAutomata : ISubstringSearcher
     {
-        public string Name => "FiniteStateAutomata";
+        public string Name => "确定性有限状态自动机";
 
         public int Search(string text, string pattern)
         {

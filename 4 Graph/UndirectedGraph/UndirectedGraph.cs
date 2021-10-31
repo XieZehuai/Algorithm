@@ -13,12 +13,10 @@ namespace _4_Graph
         /// <summary>
         /// 用于在图中表示边的数据结构
         /// </summary>
-        protected class Edge : IEnumerable<int>, IEnumerator<int>
+        protected class Edge : IEnumerable<int>
         {
             public readonly int vertex;
             public Edge next;
-
-            private Edge current = null;
 
             public Edge(int vertex)
             {
@@ -26,34 +24,19 @@ namespace _4_Graph
                 next = null;
             }
 
-            public int Current => current.vertex;
-
-            object IEnumerator.Current => Current;
-
             public IEnumerator<int> GetEnumerator()
             {
-                return this;
+                Edge temp = this;
+                while (temp != null)
+                {
+                    yield return temp.vertex;
+                    temp = temp.next;
+                }
             }
 
             IEnumerator IEnumerable.GetEnumerator()
             {
                 return GetEnumerator();
-            }
-
-            public bool MoveNext()
-            {
-                current = current == null ? this : current.next;
-
-                return current != null;
-            }
-
-            public void Reset()
-            {
-                current = null;
-            }
-
-            public void Dispose()
-            {
             }
         }
         #endregion

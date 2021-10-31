@@ -1,5 +1,4 @@
-﻿using System;
-using _2_Sort.PriorityQueue;
+﻿using _2_Sort.PriorityQueue;
 
 namespace _4_Graph.ShortestPath
 {
